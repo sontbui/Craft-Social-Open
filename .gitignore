@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://www.dartlang.org/guides/libraries/private-files
 
 # Files and directories created by pub
@@ -25,3 +26,99 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+=======
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IDE-related
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+
+# Symbolication and Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android Studio build artifacts
+android/.gradle/
+android/app/build/
+android/local.properties
+android/app/outputs/
+
+# iOS-specific
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/App.framework
+
+# Generated files
+*.lock
+*.tmp
+*.temp
+*.orig
+*.so
+*.DS_Store
+
+# Android-specific build files
+*.jar
+*.aar
+*.class
+*.dex
+*.keystore
+*.properties
+*.gradle
+.gradle/
+android/app/debug/
+android/app/release/
+
+# iOS-specific build files
+*.xcuserstate
+*.xcuserdatad
+*.xcworkspace
+*.xcconfig
+*.xcscheme
+*.xcodeproj
+*.ipa
+
+# Flutter build files
+build/
+*.dill
+*.cache.dill
+*.apk
+*.bin
+*.so
+*.framework
+
+# Large files (specific exclusions)
+build/ios/Debug-iphonesimulator/gRPC-Core/grpc.framework/grpc
+build/app/outputs/apk/debug/app-debug.apk
+build/app/outputs/flutter-apk/app-debug.apk
+build/app/intermediates/stripped_native_libs/debug/out/lib/arm64-v8a/libVkLayer_khronos_validation.so
+build/.dart_tool/flutter_build/*.dill
+build/1906162ccb255627e94d2d17da8fe11e.cache.dill.track.dill
+build/c4c2fe0666a8af71e108614a2500861d.cache.dill.track.dill
+>>>>>>> a5c0537 (Change repo and push code)
