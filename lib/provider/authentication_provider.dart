@@ -1,6 +1,10 @@
 // import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart' as prefix;
 
+import 'dart:io';
+
 import 'package:clone_gpt/authentications/opt_screen.dart';
+import 'package:clone_gpt/contains/constains.dart';
+import 'package:clone_gpt/models/user_model.dart';
 import 'package:clone_gpt/utility/utility.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -18,6 +22,10 @@ class AuthenticationProvider extends ChangeNotifier {
   // keytool -exportcert -keystore debug.keystore -list -v
   String? _phoneNumber;
   String? _password;
+
+  UserModel? _userModel;
+
+  UserModel get userModel => _userModel!;
 
   String? get uid => _uid;
   String get phoneNumber => _phoneNumber!;
@@ -95,5 +103,44 @@ class AuthenticationProvider extends ChangeNotifier {
       notifyListeners();
       showSnackbar(context: context, content: e.toString());
     }
+  }
+
+  // save user data to firestore database
+  void saveUserDataToFireStore({
+    required BuildContext context,
+    required UserModel userModel,
+    required File fileImage,
+    required Function onSuccess,
+  }) async {
+    _isLoading = true;
+    notifyListeners();
+    try {
+      // put image to storage
+      String imageURL = await storeFileImageToStorage(
+          '${Constains.userImages}/$uid.jpg', fileImage);
+
+      userModel.profileImage = imageURL;
+      userModel.lastLogin = DateTime.now().microsecondsSinceEpoch.toString();
+      userModel.dateJoined = DateTime.now().microsecondsSinceEpoch.toString();
+
+      _userModel = userModel;
+
+      //  save data to firestore
+      await firebaseFirestore
+          .collection(Constains.users)
+          .doc(_uid)
+          .set(userModel.toMap());
+    } on FirebaseException catch (e) {
+      _isLoading = false;
+      showSnackbar(context: context, content: e.toString());
+    }
+  }
+
+  // store image to file base and get download URL
+  Future<String> storeFileImageToStorage(String ref, File file) async {
+    UploadTask uploadTask = firebaseStorage.ref().child(ref).putFile(file);
+    TaskSnapshot taskSnapshot = await uploadTask;
+    String donwloadURL = await taskSnapshot.ref.getDownloadURL();
+    return donwloadURL;
   }
 }

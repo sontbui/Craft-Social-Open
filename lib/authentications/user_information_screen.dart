@@ -55,11 +55,16 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
   void cropImage(filePath) async {
     CroppedFile? cropperFile = await ImageCropper()
         .cropImage(sourcePath: filePath, maxHeight: 800, maxWidth: 800);
+    popThePickImageDialog();
     if (cropperFile != null) {
       setState(() {
         finalImageFile = File(cropperFile.path);
       });
     }
+  }
+
+  void popThePickImageDialog() {
+    Navigator.pop(context);
   }
 
   void showImagePickerDialog() {
@@ -101,7 +106,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                           color: Colors.purple,
                         ),
                       ),
-                      Text('Gallery'),
+                      Text('Amblums'),
                     ],
                   ),
                 ),
