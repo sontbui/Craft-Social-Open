@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # Craft-Social-Open
-**Craft-Social-Open is a modern chat and social media app built with Flutter, featuring real-time messaging, AI-powered responses via ChatGPT, and image generation through DALL-E **
+Craft-Social-Open is a modern chat and social media app built with Flutter, featuring real-time messaging, AI-powered responses via ChatGPT, and image generation through DALL-E 
 =======
 # clone_gpt
 
@@ -18,8 +18,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-- flutterfire configure --project=clone-gpt-sontbui
-
-- keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android
->>>>>>> a5c0537 (Change repo and push code)
