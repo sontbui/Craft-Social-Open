@@ -1,6 +1,7 @@
 
+<p align="center">
 # Craft-Social-Open
-
+</p>
 
 Description 
 ==
