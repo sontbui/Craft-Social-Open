@@ -1,6 +1,6 @@
 
 <p align="center">
-# Craft-Social-Open
+   <h1>Craft-Social-Open</h1>
 </p>
 
 Description 
