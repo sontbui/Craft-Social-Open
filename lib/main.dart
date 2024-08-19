@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
         theme:
             MyTheme.themeData(isDarkTheme: value.themeType, context: context),
         // home: const UserInformationScreen(phoneNumber: '1234567890'),
-        initialRoute: Constains.userInformtaionScreen,
+        initialRoute: Constains.loginScreen,
         routes: {
           Constains.loginScreen: (context) => const LoginScreen(),
           Constains.registrationScreen: (context) => const RegistrationScreen(),
