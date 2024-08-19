@@ -355,4 +355,5 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
       dobController.text = DateFormat('dd/MM/yyyy').format(picked).toString();
     }
   }
+  //  store user data to firebase store
 }

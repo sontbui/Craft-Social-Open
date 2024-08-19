@@ -1,7 +1,7 @@
 import 'package:clone_gpt/authentications/login_screen.dart';
 import 'package:clone_gpt/authentications/registration.dart';
 import 'package:clone_gpt/authentications/user_information_screen.dart';
-import 'package:clone_gpt/contains/contains.dart';
+import 'package:clone_gpt/contains/constains.dart';
 import 'package:clone_gpt/firebase_options.dart';
 import 'package:clone_gpt/main_screnn/home_screen.dart';
 import 'package:clone_gpt/provider/authentication_provider.dart';
@@ -54,12 +54,12 @@ class _MyAppState extends State<MyApp> {
         theme:
             MyTheme.themeData(isDarkTheme: value.themeType, context: context),
         // home: const UserInformationScreen(phoneNumber: '1234567890'),
-        initialRoute: Contains.userInformtaionScreen,
+        initialRoute: Constains.userInformtaionScreen,
         routes: {
-          Contains.loginScreen: (context) => const LoginScreen(),
-          Contains.registrationScreen: (context) => const RegistrationScreen(),
-          Contains.homeScreen: (context) => const HomeScreen(),
-          Contains.userInformtaionScreen: (context) =>
+          Constains.loginScreen: (context) => const LoginScreen(),
+          Constains.registrationScreen: (context) => const RegistrationScreen(),
+          Constains.homeScreen: (context) => const HomeScreen(),
+          Constains.userInformtaionScreen: (context) =>
               const UserInformationScreen(),
         },
       );
