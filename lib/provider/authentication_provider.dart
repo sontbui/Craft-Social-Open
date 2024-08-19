@@ -129,7 +129,12 @@ class AuthenticationProvider extends ChangeNotifier {
       await firebaseFirestore
           .collection(Constains.users)
           .doc(_uid)
-          .set(userModel.toMap());
+          .set(userModel.toMap())
+          .then((value) {
+        onSuccess();
+        _isLoading = false;
+        notifyListeners();
+      });
     } on FirebaseException catch (e) {
       _isLoading = false;
       showSnackbar(context: context, content: e.toString());
