@@ -49,12 +49,11 @@ class _MyAppState extends State<MyApp> {
     return Consumer<MyThemeProvider>(
         builder: (BuildContext context, value, Widget? child) {
       return MaterialApp(
-        title: 'Clone ChatGPT',
+        title: 'Craft Social Open',
         debugShowCheckedModeBanner: false,
         theme:
             MyTheme.themeData(isDarkTheme: value.themeType, context: context),
-        // home: const UserInformationScreen(phoneNumber: '1234567890'),
-        initialRoute: Constains.loginScreen,
+        initialRoute: Constains.registrationScreen,
         routes: {
           Constains.loginScreen: (context) => const LoginScreen(),
           Constains.registrationScreen: (context) => const RegistrationScreen(),

@@ -388,7 +388,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       listen: false,
     );
     String phoneNumber = phoneController.text.trim();
-    String fullPhoneNumber = '+${selectedCountry.phoneCode}$phoneNumber';
+    String fullPhoneNumber = '${selectedCountry.phoneCode}$phoneNumber';
     // String fulPhoneNumber =
     //     convertToE164(phoneNumber, selectedCountry.countryCode);
 
